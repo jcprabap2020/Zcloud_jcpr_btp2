@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZR_RENT_CUSTOM_JPJCP'
+@MappingRole: true
+define role ZR_RENT_CUSTOM_JPJCP {
+  grant select on ZR_RENT_CUSTOM_JPJCP
+  where TRUE;
+}

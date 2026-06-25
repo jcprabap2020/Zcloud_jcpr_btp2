@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_RENT_CUSTOM_JPJCP'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_RENT_CUSTOM_JPJCP'
+  }
+}
+define service ZUI_RENT_CUSTOM_JP_O4JCP provider contracts odata_v4_ui {
+  expose ZC_RENT_CUSTOM_JPJCP;
+}

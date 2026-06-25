@@ -1,0 +1,52 @@
+managed implementation in class ZBP_R_RENT_CUSTOM_JPJCP unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_RENT_CUSTOM_JPJCP alias ZrRentCustomJpjcp
+persistent table ZRENT_CUSTOM_JP
+extensible
+draft table ZRNT_CSTM_J_DJCP
+etag master LocalLastChanged
+lock master total etag LastChanged
+authorization master( global )
+{
+  field ( mandatory : create )
+   DocID,
+   Matricula;
+
+  field ( readonly )
+   LocalLastChanged,
+   LastChanged,
+   Createdby,
+   Changedby;
+
+  field ( readonly : update )
+   DocID,
+   Matricula;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZRENT_CUSTOM_JP corresponding extensible
+  {
+    DocID = DOC_ID;
+    Matricula = MATRICULA;
+    Nombres = NOMBRES;
+    Apellidos = APELLIDOS;
+    Email = EMAIL;
+    CntrType = CNTR_TYPE;
+    LocalLastChanged = LOCAL_LAST_CHANGED;
+    LastChanged = LAST_CHANGED;
+    Createdby = CREATEDBY;
+    Changedby = CHANGEDBY;
+  }
+
+}

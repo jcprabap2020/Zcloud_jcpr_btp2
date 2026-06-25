@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_RENT_CUSTOM_JPJCP'
+@MappingRole: true
+define role ZC_RENT_CUSTOM_JPJCP {
+  grant select on ZC_RENT_CUSTOM_JPJCP
+  where INHERITING CONDITIONS FROM ENTITY ZR_RENT_CUSTOM_JPJCP REPLACING { ROOT WITH _BaseEntity };
+}
